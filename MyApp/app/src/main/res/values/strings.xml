@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">MyAppCrud</string>
+
+    <string name="titestudiante">Registro de Estudiantes</string>
+
+    <string name="ident">Identificacion</string>
+
+    <string name="nombre">Nombres y Apellidos</string>
+
+    <string name="curso">Curso</string>
+
+    <string name="nota1">Nota Uno</string>
+
+    <string name="nota2">Nota Dos</string>
+
+    <string name="nota3">Nota Tres</string>
+
+    <string name="guardar">Crear</string>
+
+    <string name="consultar">Consultar</string>
+
+</resources>
