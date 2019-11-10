@@ -246,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
                     db = abrirConexion();
 
                     ubd.eliminar(db, "'"+ingEstudiante2.getIdentificacion()+"'");
-
+                    Toast.makeText(this,"Se Eliminó  ", Toast.LENGTH_SHORT).show();
 
                     db.close();
 
