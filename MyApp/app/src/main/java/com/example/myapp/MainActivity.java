@@ -116,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     public void metodoCons(View v1){
 
         String eident = identificacion.getText().toString();
@@ -153,6 +155,70 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
+
+    public void modificar(View v){
+
+        String eident = identificacion.getText().toString();
+
+        String enombre = nombre.getText().toString();
+
+        String ecurso = curso.getText().toString();
+
+        String enota1 = nota1.getText().toString();
+
+        String enota2 = nota2.getText().toString();
+
+        String enota3 = nota3.getText().toString();
+
+        if (eident.equals("")||enombre.equals("")||ecurso.equals("")||enota1.equals("")||enota2.equals("")||enota3.equals("")){
+
+            Toast.makeText(this, "No pueden dejar campos vacios",
+
+                    Toast.LENGTH_LONG).show();
+
+        }else{
+
+            Estudiante ingEstudiante = new Estudiante();
+
+            ingEstudiante.setIdentificacion(identificacion.getText().toString());
+
+            ingEstudiante.setNombre(nombre.getText().toString());
+
+            ingEstudiante.setCurso(curso.getText().toString());
+
+            ingEstudiante.setNota1(Float.parseFloat(nota1.getText().toString()));
+
+            ingEstudiante.setNota2(Float.parseFloat(nota2.getText().toString()));
+
+            ingEstudiante.setNota3(Float.parseFloat(nota3.getText().toString()));
+
+            switch (v.getId()){
+
+                case R.id.btnModificar:
+
+                    db = abrirConexion();
+
+                    ubd.modificar(db,ingEstudiante,ingEstudiante.getIdentificacion());
+
+                    Toast.makeText(this,"Estudiante Editado ", Toast.LENGTH_SHORT).show();
+
+                    clearText();
+
+                    db.close();
+
+                    break;
+
+            }
+
+        }
+
+    }
+
+
+
+
 
 
 
@@ -200,6 +266,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void clearText() {
 
         identificacion.setText("");
@@ -213,6 +292,9 @@ public class MainActivity extends AppCompatActivity {
         nota2.setText("");
 
         nota3.setText("");
+
+        //resultado.setText("");
+        resul.setText("");
 
     }
 }

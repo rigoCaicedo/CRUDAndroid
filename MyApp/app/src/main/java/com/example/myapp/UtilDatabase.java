@@ -107,7 +107,7 @@ public class UtilDatabase {
 
         StringBuilder sb = new StringBuilder();
 
-//PARA HACER CONSULTA POR IDENTIFICACION
+//PARA HACER CONSULTA POR IDENTIFICACION  Y ELIMINAR
 
 
 
@@ -115,6 +115,37 @@ public class UtilDatabase {
 
 
     }
+
+
+    public void modificar(SQLiteDatabase db, Estudiante e ,String ident ) {
+
+        ContentValues updateUsuario = new ContentValues();
+
+        //  nuevoRegistro.put("identificacion", e.getIdentificacion());
+
+        updateUsuario.put("nombre", e.getNombre());
+
+        updateUsuario.put("curso", e.getCurso());
+
+        updateUsuario.put("nota1", e.getNota1());
+
+        updateUsuario.put("nota2", e.getNota2());
+
+        updateUsuario.put("nota3", e.getNota3());
+
+//Insertar un registro
+
+        String[] args= new String[]{ident};
+
+        db.update("estudiante",updateUsuario, "identificacion=?", args);
+
+    }
+
+
+
+
+
+
 
 
 

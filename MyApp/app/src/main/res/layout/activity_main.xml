@@ -154,9 +154,9 @@
 
                 android:text="@string/modificar"
 
-                android:id="@+id/modificar"
+                android:id="@+id/btnModificar"
 
-                android:onClick="metodoCons"/>
+                android:onClick="modificar"/>
 
 
             <Button
