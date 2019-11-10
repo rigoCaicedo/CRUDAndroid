@@ -146,7 +146,50 @@
 
                 android:onClick="metodoCons"/>
 
+            <Button
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:text="@string/modificar"
+
+                android:id="@+id/modificar"
+
+                android:onClick="metodoCons"/>
+
+
+            <Button
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:text="@string/eliminar"
+
+                android:id="@+id/btnEliminar"
+
+                android:onClick="metodoCons"/>
+
+
+
+
+
+
         </TableRow>
+
+        <Button
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/borracampos"
+
+            android:id="@+id/btnlimpiarCam"
+
+            android:onClick="metodoCons"/>
+
 
         <TextView
 

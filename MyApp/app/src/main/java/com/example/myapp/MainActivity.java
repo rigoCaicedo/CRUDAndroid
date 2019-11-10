@@ -145,14 +145,21 @@ public class MainActivity extends AppCompatActivity {
                     resul.setText(respuesta);
 
                     break;
-
+                case R.id.btnlimpiarCam:
+                    clearText();
+                 break;
             }
 
         }
 
     }
 
+
+
+
     private void clearText() {
+
+
 
         identificacion.setText("");
 
