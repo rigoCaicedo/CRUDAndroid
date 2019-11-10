@@ -169,7 +169,7 @@
 
                 android:id="@+id/btnEliminar"
 
-                android:onClick="metodoCons"/>
+                android:onClick="eliminardatos"/>
 
 
 

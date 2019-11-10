@@ -156,10 +156,51 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    public  void eliminardatos(View v1){
+
+
+        String eident = identificacion.getText().toString();
+
+        if (eident.equals("")){
+
+            Toast.makeText(this, "No puede dejar el campo identificacion vacio",
+
+                    Toast.LENGTH_LONG).show();
+
+        }else{
+
+            Estudiante ingEstudiante2 = new Estudiante();
+
+            ingEstudiante2.setIdentificacion(identificacion.getText().toString());
+
+            switch (v1.getId()) {
+
+                case R.id.btnEliminar:
+
+                    db = abrirConexion();
+
+                    ubd.eliminar(db, "'"+ingEstudiante2.getIdentificacion()+"'");
+
+
+                    db.close();
+
+              //      resul.setText(respuesta);
+
+               clearText();
+
+                    break;
+
+            }
+
+        }
+
+
+
+
+    }
+
 
     private void clearText() {
-
-
 
         identificacion.setText("");
 

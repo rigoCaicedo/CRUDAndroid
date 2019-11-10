@@ -87,6 +87,36 @@ public class UtilDatabase {
         return sb.toString();
 
     }
+/*
+    public void Eliminar(SQLiteDatabase db, String ident ){
+
+
+
+
+//Insertar un registro
+
+        db.delete("estudiante","identificacion = "+ident);
+
+    }
+*/
+
+
+
+    public  void eliminar(SQLiteDatabase db, String ident ){
+
+
+        StringBuilder sb = new StringBuilder();
+
+//PARA HACER CONSULTA POR IDENTIFICACION
+
+
+
+        db.delete("estudiante", "identificacion="+ident,null);
+
+
+    }
+
+
 
     public List<String> getList() {
 
