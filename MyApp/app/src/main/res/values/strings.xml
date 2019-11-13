@@ -2,19 +2,15 @@
 
     <string name="app_name">MyAppCrud</string>
 
-    <string name="titestudiante">Registro de Estudiantes</string>
+    <string name="titventas">Registro de Ventas</string>
 
-    <string name="ident">Identificacion</string>
+    <string name="fecha_venta">fecha de venta</string>
 
-    <string name="nombre">Nombres y Apellidos</string>
+    <string name="golosinas">Valor golosinas vendidas</string>
 
-    <string name="curso">Curso</string>
+    <string name="aseo">Valor aseo vendidas</string>
 
-    <string name="nota1">Nota Uno</string>
-
-    <string name="nota2">Nota Dos</string>
-
-    <string name="nota3">Nota Tres</string>
+    <string name="escolares">Valor escolares vendidas Uno</string>
 
     <string name="guardar">Crear</string>
 

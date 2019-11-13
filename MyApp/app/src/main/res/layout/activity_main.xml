@@ -18,7 +18,7 @@
 
         android:textSize="18sp"
 
-        android:text="@string/titestudiante"
+        android:text="@string/titventas"
 
         android:textStyle="bold"/>
 
@@ -28,35 +28,13 @@
 
         android:layout_height="wrap_content"
 
-        android:hint="@string/ident"
+        android:hint="@string/fecha_venta"
 
-        android:id="@+id/txtIdent"
-
-        android:inputType="number"/>
-
-    <EditText
-
-        android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-
-        android:hint="@string/nombre"
-
-        android:id="@+id/txtNombre"
+        android:id="@+id/txt_fecha_venta"
 
         android:inputType="text"/>
 
-    <EditText
 
-        android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-
-        android:hint="@string/curso"
-
-        android:id="@+id/txtCurso"
-
-        android:inputType="text"/>
 
     <TableLayout
 
@@ -76,21 +54,9 @@
 
                 android:layout_height="wrap_content"
 
-                android:hint="@string/nota1"
+                android:hint="@string/golosinas"
 
-                android:id="@+id/txtNota1"
-
-                android:inputType="number"/>
-
-            <EditText
-
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
-
-                android:hint="@string/nota2"
-
-                android:id="@+id/txtNota2"
+                android:id="@+id/txt_golosinas"
 
                 android:inputType="number"/>
 
@@ -100,9 +66,21 @@
 
                 android:layout_height="wrap_content"
 
-                android:hint="@string/nota3"
+                android:hint="@string/aseo"
 
-                android:id="@+id/txtNota3"
+                android:id="@+id/txt_aseo"
+
+                android:inputType="number"/>
+
+            <EditText
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:hint="@string/escolares"
+
+                android:id="@+id/txt_escolares"
 
                 android:inputType="number"/>
 

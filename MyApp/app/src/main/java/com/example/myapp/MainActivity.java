@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView resul;
 
-    private EditText identificacion, nombre, curso, nota1, nota2, nota3;
+    private EditText fecha_venta, golosinas, aseo, escolares;
 
     SQLiteDatabase db;
 
@@ -34,25 +34,20 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        identificacion = (EditText)findViewById(R.id.txtIdent);
+        fecha_venta = (EditText)findViewById(R.id.txt_fecha_venta);
 
-        nombre = (EditText)findViewById(R.id.txtNombre);
+        golosinas = (EditText)findViewById(R.id.txt_golosinas);
 
-        curso = (EditText)findViewById(R.id.txtCurso);
+        aseo = (EditText)findViewById(R.id.txt_aseo);
 
-        nota1 = (EditText)findViewById(R.id.txtNota1);
+        escolares = (EditText)findViewById(R.id.txt_escolares);
 
-        nota2 = (EditText)findViewById(R.id.txtNota2);
-
-        nota3 = (EditText)findViewById(R.id.txtNota3);
-
-        resul = (TextView)findViewById(R.id.resultado);
 
     }
 
     public SQLiteDatabase abrirConexion() {
 
-        Database us = new Database(this, "DBEstudiantes", null, 1);
+        Database us = new Database(this, "DBVentas", null, 1);
 
         return db = us.getWritableDatabase();
 

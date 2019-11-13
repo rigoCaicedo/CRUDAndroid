@@ -12,30 +12,29 @@ public class UtilDatabase {
 
     List<String> listAdapter = new ArrayList<String>();
 
-    public void insertar(SQLiteDatabase db, Estudiante e ){
+    public void insertar(SQLiteDatabase db, Ventas e ){
 
         ContentValues nuevoRegistro = new ContentValues();
 
-        nuevoRegistro.put("identificacion", e.getIdentificacion());
+        nuevoRegistro.put("fecha_venta", e.get_fecha_venta());
 
-        nuevoRegistro.put("nombre", e.getNombre());
+        nuevoRegistro.put("venta_golosinas", e.get_venta_golosinas());
 
-        nuevoRegistro.put("curso", e.getCurso());
+        nuevoRegistro.put("venta_aseo", e.get_venta_aseo());
 
-        nuevoRegistro.put("nota1", e.getNota1());
+        nuevoRegistro.put("venta_escolares", e.get_venta_escolares());
 
-        nuevoRegistro.put("nota2", e.getNota2());
-
-        nuevoRegistro.put("nota3", e.getNota3());
 
 //Insertar un registro
 
-        db.insert("estudiante",null,nuevoRegistro);
+        db.insert("ventas",null,nuevoRegistro);
 
     }
 
-    public String consultarbyIdent(SQLiteDatabase db, String ident ){
-
+    public String consultarbyMes(SQLiteDatabase db, String agno, String mes ){
+        String mes = agno+'-'+mes;
+        String mes_ini = agno+'-'+mes+'-01';
+        String mes_fin = agno+'-'+mes+'-31';
         List<String> list = new ArrayList<String>();
 
         StringBuilder sb = new StringBuilder();
@@ -44,7 +43,7 @@ public class UtilDatabase {
 
         int i=0;
 
-        Cursor c = db.rawQuery("SELECT * FROM estudiante WHERE identificacion ="+ident,null);
+        Cursor c = db.rawQuery("SELECT SUM(venta_golosinas) as golosinas, sum(venta_aseo) as aseo, sum(venta_escolares) as escolares FROM ventas WHERE identificacion between  '"+mes_ini+"' and '"+mes_fin+"'",null);
 
         if (c.moveToFirst()){
 
@@ -52,19 +51,15 @@ public class UtilDatabase {
 
                 i++;
 
-                String regIdent =String.valueOf( c.getInt(0));
+                String reg_mes = mes;
 
-                String regNombre = c.getString(1);
+                String reg_golosinas = String.valueOf( c.getInt(1));//c.getString(1);
 
-                String regCurso = c.getString(2);
+                String reg_aseo = String.valueOf( c.getInt(2));//c.getString(2);
 
-                String regNota1 = String.valueOf( c.getInt(3));
+                String reg_escolares = String.valueOf( c.getInt(3));
 
-                String regNota2 = String.valueOf( c.getInt(4));
-
-                String regNota3 = String.valueOf( c.getInt(5));
-
-                list.add(regIdent +" " + regNombre+" "+regCurso+" "+regNota1+" "+regNota2+" "+regNota3);
+                list.add(reg_mes +" " + reg_golosinas+" "+reg_aseo+" "+reg_escolares);
 
             }while(c.moveToNext());
 
@@ -102,7 +97,7 @@ public class UtilDatabase {
 
 
 
-    public  void eliminar(SQLiteDatabase db, String ident ){
+    public  void eliminar(SQLiteDatabase db, String fecha_venta ){
 
 
         StringBuilder sb = new StringBuilder();
@@ -111,33 +106,30 @@ public class UtilDatabase {
 
 
 
-        db.delete("estudiante", "identificacion="+ident,null);
+        db.delete("ventas", "fecha_venta='"+fecha_venta+"'",null);
 
 
     }
 
 
-    public void modificar(SQLiteDatabase db, Estudiante e ,String ident ) {
+    public void modificar(SQLiteDatabase db, Ventas e ,String fecha_venta ) {
 
-        ContentValues updateUsuario = new ContentValues();
+        ContentValues updateVenta = new ContentValues();
 
         //  nuevoRegistro.put("identificacion", e.getIdentificacion());
 
-        updateUsuario.put("nombre", e.getNombre());
+        updateVenta.put("venta_golosinas", e.get_venta_golosinas());
 
-        updateUsuario.put("curso", e.getCurso());
+        updateVenta.put("venta_aseo", e.get_venta_aseo());
 
-        updateUsuario.put("nota1", e.getNota1());
+        updateVenta.put("venta_escolares", e.get_venta_escolares());
 
-        updateUsuario.put("nota2", e.getNota2());
-
-        updateUsuario.put("nota3", e.getNota3());
 
 //Insertar un registro
 
-        String[] args= new String[]{ident};
+        String[] args= new String[]{fecha_venta};
 
-        db.update("estudiante",updateUsuario, "identificacion=?", args);
+        db.update("ventas",updateVenta, "fecha_venta=?", args);
 
     }
 

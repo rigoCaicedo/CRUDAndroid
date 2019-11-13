@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class Database extends SQLiteOpenHelper {
 
-    String scriptDDL ="CREATE TABLE estudiante(identificacion VARCHAR(50), nombre VARCHAR(50), curso VARCHAR(50), nota1 DOUBLE, nota2 DOUBLE, nota3 DOUBLE)";
+    String scriptDDL ="CREATE TABLE ventas(venta_golosinas bigint, venta_aseo bigint, venta_escolares bigint";
 
     public Database(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
 
@@ -28,7 +28,7 @@ public class Database extends SQLiteOpenHelper {
 
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
-        db.execSQL("Drop table if exists estudiante");
+        db.execSQL("Drop table if exists ventas");
 
         db.execSQL(scriptDDL);
 
